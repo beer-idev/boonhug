@@ -60,9 +60,9 @@ function AdoptionDialog({ pet }: { pet: Pet }) {
           <DialogDescription>ฝากข้อมูลติดต่อไว้ก่อน ทีมงานจะโทรกลับเพื่อพูดคุยเรื่องความพร้อมและนัดวันทำความรู้จักน้อง</DialogDescription>
         </DialogHeader>
         <form className="grid gap-4" onSubmit={(event) => event.preventDefault()}>
-          <label className="grid gap-2 text-sm font-bold">ชื่อผู้สนใจ<input required className="min-h-12 rounded-2xl border-2 border-[#d9f1f2] px-4 font-normal outline-none focus:border-[#45ccd5]" placeholder="ชื่อ-นามสกุล" /></label>
-          <label className="grid gap-2 text-sm font-bold">เบอร์โทรศัพท์<input required type="tel" className="min-h-12 rounded-2xl border-2 border-[#d9f1f2] px-4 font-normal outline-none focus:border-[#45ccd5]" placeholder="08x-xxx-xxxx" /></label>
-          <label className="grid gap-2 text-sm font-bold">เล่าเรื่องบ้านของคุณสั้น ๆ<textarea rows={3} className="rounded-2xl border-2 border-[#d9f1f2] p-4 font-normal outline-none focus:border-[#45ccd5]" placeholder="สมาชิกในบ้าน พื้นที่ และประสบการณ์เลี้ยงสัตว์" /></label>
+          <label className="grid gap-2 text-sm font-bold">ชื่อผู้สนใจ<input required className="min-h-12 min-w-0 w-full rounded-2xl border-2 border-[#d9f1f2] px-4 font-normal outline-none focus:border-[#45ccd5]" placeholder="ชื่อ-นามสกุล" /></label>
+          <label className="grid gap-2 text-sm font-bold">เบอร์โทรศัพท์<input required type="tel" className="min-h-12 min-w-0 w-full rounded-2xl border-2 border-[#d9f1f2] px-4 font-normal outline-none focus:border-[#45ccd5]" placeholder="08x-xxx-xxxx" /></label>
+          <label className="grid gap-2 text-sm font-bold">เล่าเรื่องบ้านของคุณสั้น ๆ<textarea rows={3} className="min-w-0 w-full rounded-2xl border-2 border-[#d9f1f2] p-4 font-normal outline-none focus:border-[#45ccd5]" placeholder="สมาชิกในบ้าน พื้นที่ และประสบการณ์เลี้ยงสัตว์" /></label>
           <Button type="submit" variant="warm" size="lg">ส่งความสนใจรับเลี้ยง</Button>
         </form>
       </DialogContent>

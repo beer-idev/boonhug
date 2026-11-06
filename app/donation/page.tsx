@@ -10,18 +10,18 @@ export const metadata = { title: "บริจาค | Boonhug" };
 export default function DonationPage() {
   return (
     <div className="page-section py-8 md:py-12">
-      <section className="gradient-brand relative overflow-hidden rounded-[34px] px-7 py-10 text-white shadow-[var(--shadow)] md:px-12 md:py-12">
+      <section className="gradient-brand relative overflow-hidden rounded-[34px] px-6 py-10 text-white shadow-[var(--shadow)] sm:px-8 md:px-12 md:py-12">
         <div className="relative z-10 max-w-2xl">
           <span className="text-sm font-bold text-cyan-100">เลือกส่งต่อความช่วยเหลือในแบบของคุณ</span>
-          <h1 className="mt-2 balance text-4xl font-black leading-tight md:text-6xl">เลือกประเภทการทำบุญ<br />ที่ท่านต้องการ</h1>
+          <h1 className="mt-2 balance text-3xl font-black leading-tight sm:text-4xl lg:text-6xl">เลือกประเภทการทำบุญ<br />ที่ท่านต้องการ</h1>
         </div>
-        <div className="absolute -bottom-16 right-5 opacity-95 md:right-16">
+        <div className="absolute -bottom-16 right-5 hidden opacity-50 sm:block lg:right-16 lg:opacity-95">
           <PawPrint className="size-48 fill-white stroke-white md:size-60" aria-hidden="true" />
         </div>
       </section>
 
-      <Tabs defaultValue="animal" className="-mt-5 px-3 md:px-5">
-        <TabsList className="relative z-10">
+      <Tabs defaultValue="animal" className="mt-5 sm:-mt-5 sm:px-3 md:px-5">
+        <TabsList className="relative z-10 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
           <TabsTrigger value="animal">บุญวันเกิด</TabsTrigger>
           <TabsTrigger value="emergency">บุญสะเดาะเคราะห์</TabsTrigger>
           <TabsTrigger value="health">บุญสุขภาพ</TabsTrigger>
@@ -46,7 +46,7 @@ function DonationContent() {
         <Button size="sm">บริจาคอาหาร</Button>
         <Button size="sm" variant="brand">บริจาคเงิน</Button>
       </div>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {organizations.map((organization, index) => (
           <article key={organization.id} className="soft-card flex min-h-[280px] flex-col p-6 transition duration-200 hover:-translate-y-1">
             <div className="relative mb-4 h-20 w-full">

@@ -24,8 +24,8 @@ export function ShopProduct() {
   const [added, setAdded] = useState(false);
 
   return (
-    <div className="soft-card grid gap-7 p-4 md:p-7 lg:grid-cols-[90px_1.05fr_0.9fr] lg:gap-8">
-      <div className="order-2 flex gap-3 overflow-x-auto lg:order-1 lg:flex-col">
+    <div className="soft-card grid min-w-0 gap-7 p-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:p-7 lg:grid-cols-[90px_minmax(0,1.05fr)_minmax(0,0.9fr)] lg:gap-8">
+      <div className="order-2 flex min-w-0 self-start items-start gap-3 overflow-x-auto pb-1 md:col-start-1 md:row-start-2 lg:order-1 lg:col-start-1 lg:row-start-1 lg:flex-col lg:pb-0">
         {gallery.map((item, index) => (
           <button
             key={item.thumb}
@@ -40,14 +40,14 @@ export function ShopProduct() {
         ))}
       </div>
 
-      <div className="relative order-1 aspect-square overflow-hidden rounded-[26px] bg-[#cef7f7] lg:order-2">
+      <div className="relative order-1 aspect-square min-w-0 overflow-hidden rounded-[26px] bg-[#cef7f7] md:col-start-1 md:row-start-1 lg:order-2 lg:col-start-2 lg:row-start-1">
         <Image src={gallery[imageIndex].src} alt={gallery[imageIndex].alt} fill priority sizes="(max-width: 1024px) 100vw, 42vw" className="object-contain" />
       </div>
 
-      <section className="order-3 flex flex-col py-2 lg:py-5">
+      <section className="order-3 flex min-w-0 flex-col py-2 md:col-start-2 md:row-span-2 md:row-start-1 lg:col-start-3 lg:row-span-1 lg:row-start-1 lg:py-5">
         <span className="mb-3 w-fit rounded-full bg-[#e8fbfb] px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-[#087ba0]">Boonhug collection</span>
         <h1 className="text-3xl font-black text-[#10213f] md:text-4xl">T-shirt boonhug</h1>
-        <div className="mt-3 flex items-center gap-1 text-[#ffb51b]" aria-label="คะแนน 4.8 จาก 5">
+        <div className="mt-3 flex flex-wrap items-center gap-1 text-[#ffb51b]" aria-label="คะแนน 4.8 จาก 5">
           {[1, 2, 3, 4, 5].map((star) => <Star key={star} className="size-5 fill-current" />)}
           <span className="ml-2 text-sm font-bold text-slate-500">4.8 (126 รีวิว)</span>
         </div>
@@ -74,18 +74,20 @@ export function ShopProduct() {
           </div>
         </fieldset>
 
-        <div className="mt-6 flex items-center gap-3">
-          <div className="flex min-h-12 items-center rounded-full bg-[#effafa] p-1">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="flex min-h-12 shrink-0 items-center rounded-full bg-[#effafa] p-1">
             <button type="button" aria-label="ลดจำนวน" onClick={() => setQuantity((value) => Math.max(1, value - 1))} className="grid size-10 place-items-center rounded-full text-[#087ba0] hover:bg-white"><Minus className="size-4" /></button>
             <span className="w-8 text-center font-black">{quantity}</span>
             <button type="button" aria-label="เพิ่มจำนวน" onClick={() => setQuantity((value) => value + 1)} className="grid size-10 place-items-center rounded-full text-[#087ba0] hover:bg-white"><Plus className="size-4" /></button>
           </div>
-          <Button onClick={() => { setAdded(true); window.setTimeout(() => setAdded(false), 2200); }} className="flex-1" size="lg">
-            {added ? <><Check className="size-5" /> เพิ่มแล้ว</> : <><ShoppingBag className="size-5" /> เพิ่มลงตะกร้า</>}
-          </Button>
-          <Button type="button" size="icon" variant="outline" aria-label={liked ? "นำออกจากรายการโปรด" : "เพิ่มในรายการโปรด"} onClick={() => setLiked((value) => !value)}>
-            <Heart className={cn("size-5", liked && "fill-pink-500 text-pink-500")} />
-          </Button>
+          <div className="flex min-w-0 basis-full items-center gap-3 sm:basis-auto sm:flex-1">
+            <Button onClick={() => { setAdded(true); window.setTimeout(() => setAdded(false), 2200); }} className="min-w-0 flex-1" size="lg">
+              {added ? <><Check className="size-5" /> เพิ่มแล้ว</> : <><ShoppingBag className="size-5" /> เพิ่มลงตะกร้า</>}
+            </Button>
+            <Button type="button" size="icon" variant="outline" className="shrink-0" aria-label={liked ? "นำออกจากรายการโปรด" : "เพิ่มในรายการโปรด"} onClick={() => setLiked((value) => !value)}>
+              <Heart className={cn("size-5", liked && "fill-pink-500 text-pink-500")} />
+            </Button>
+          </div>
         </div>
       </section>
     </div>

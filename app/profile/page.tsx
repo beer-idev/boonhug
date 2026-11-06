@@ -13,15 +13,15 @@ const stats = [
 export default function ProfilePage() {
   return (
     <div className="page-section py-8 md:py-12">
-      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
         <section className="soft-card p-5 md:p-8">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
             <div className="relative size-28 shrink-0 overflow-hidden rounded-full border-4 border-[#08abc1] bg-[#dff8f8]">
               <Image src="/images/profile-avatar.png" alt="รูปโปรไฟล์ นภัสสร สังขลาย" fill priority sizes="112px" className="object-cover" />
             </div>
-            <div className="flex-1">
+            <div className="min-w-0 flex-1">
               <div className="flex items-start justify-between gap-4">
-                <div>
+                <div className="min-w-0">
                   <h1 className="text-2xl font-black text-[#079eb5] md:text-3xl">นภัสสร สังขลาย</h1>
                   <p className="mt-2 flex items-center gap-2 text-sm text-slate-500"><CalendarDays className="size-4" /> สมาชิกตั้งแต่ 12 ม.ค. 2569</p>
                   <p className="mt-1 text-sm text-slate-500">อายุ 22 ปี</p>
@@ -32,7 +32,7 @@ export default function ProfilePage() {
           </div>
           <div className="gradient-brand mt-6 rounded-[26px] px-6 py-5 text-white">
             <p className="text-sm text-cyan-50">ยอดรวมการบริจาคของคุณ</p>
-            <p className="mt-1 text-4xl font-black md:text-5xl">฿30,500 <span className="text-xl">บาท</span></p>
+            <p className="mt-1 text-3xl font-black sm:text-4xl xl:text-5xl">฿30,500 <span className="text-lg sm:text-xl">บาท</span></p>
           </div>
         </section>
 
@@ -45,12 +45,12 @@ export default function ProfilePage() {
       </div>
 
       <section className="gradient-brand mt-9 rounded-[34px] p-4 shadow-[var(--shadow)] md:p-6">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {stats.map(({ icon: Icon, label, value, unit }) => (
             <article key={label} className="relative rounded-[26px] bg-white p-6 pt-10 text-center">
               <div className="absolute left-1/2 top-0 grid size-14 -translate-x-1/2 -translate-y-1/3 place-items-center rounded-full bg-[#50d2d9] text-white"><Icon className="size-7 fill-white/20" /></div>
               <p className="font-black text-[#079eb5]">{label}</p>
-              <p className="mt-3 text-5xl font-black text-[#079eb5]">{value} <span className="text-sm font-bold">{unit}</span></p>
+              <p className="mt-3 text-4xl font-black text-[#079eb5] xl:text-5xl">{value} <span className="text-sm font-bold">{unit}</span></p>
             </article>
           ))}
         </div>

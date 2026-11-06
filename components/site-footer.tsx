@@ -4,7 +4,7 @@ import { Camera, Mail, MessageCircle, PawPrint } from "lucide-react";
 export function SiteFooter() {
   return (
     <footer className="mt-20 bg-[#083e9e] text-white">
-      <div className="page-section grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="page-section grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)]">
         <div>
           <div className="mb-4 flex items-center gap-2 text-2xl font-extrabold">
             <PawPrint className="size-8 fill-[#53d7dc] stroke-[#53d7dc]" /> boonhug.net

@@ -14,8 +14,8 @@ export function DonationDetail() {
   const [receipt, setReceipt] = useState("");
 
   return (
-    <div className="grid gap-7 lg:grid-cols-[0.86fr_1.14fr]">
-      <div className="space-y-6">
+    <div className="grid gap-7 md:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)]">
+      <div className="min-w-0 space-y-6">
         <div className="soft-card overflow-hidden p-4">
           <div className="relative aspect-square overflow-hidden rounded-[26px] bg-[#dff8f8]">
             <Image src="/images/donation-cat.png" alt="แมวของมูลนิธิรักษ์แมว" fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
@@ -31,7 +31,7 @@ export function DonationDetail() {
         </div>
       </div>
 
-      <div className="space-y-6">
+      <div className="min-w-0 space-y-6">
         <section className="soft-card p-6 md:p-8">
           <h1 className="text-2xl font-black text-[#10213f] md:text-3xl">มูลนิธิรักษ์แมว</h1>
           <p className="mt-2 flex gap-2 text-sm leading-6 text-slate-600"><MapPin className="mt-0.5 size-4 shrink-0 text-[#12b5c7]" /> 34 พุทธมณฑล 3 เขตทวีวัฒนา กรุงเทพมหานคร 10170</p>
@@ -41,11 +41,11 @@ export function DonationDetail() {
           </div>
         </section>
 
-        <section className="gradient-brand rounded-[30px] p-6 text-white shadow-[var(--shadow)] md:p-8">
+        <section className="gradient-brand rounded-[30px] p-5 text-white shadow-[var(--shadow)] sm:p-6 md:p-8">
           <label htmlFor="donation-amount" className="text-sm font-bold text-cyan-50">จำนวนเงินที่ต้องการบริจาค</label>
           <div className="mt-2 flex items-end gap-2 border-b-2 border-white/70 pb-3">
             <span className="text-2xl font-black">฿</span>
-            <input id="donation-amount" type="number" min="1" value={amount} onChange={(event) => setAmount(Number(event.target.value))} className="w-full bg-transparent text-4xl font-black outline-none placeholder:text-white/50" />
+            <input id="donation-amount" type="number" min="1" value={amount} onChange={(event) => setAmount(Number(event.target.value))} className="min-w-0 flex-1 bg-transparent text-3xl font-black outline-none placeholder:text-white/50 sm:text-4xl" />
           </div>
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {presets.map((value) => (
