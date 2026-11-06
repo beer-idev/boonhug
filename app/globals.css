@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffcf5;
+  --foreground: #10213f;
+  --cyan: #51d3da;
+  --cyan-dark: #08acc4;
+  --blue: #0753bb;
+  --blue-dark: #083999;
+  --orange: #ff944d;
+  --yellow: #ffda55;
+  --card: #ffffff;
+  --muted: #eefafa;
+  --border: #d5eff1;
+  --shadow: 0 12px 28px rgba(8, 57, 153, 0.14), 0 4px 8px rgba(16, 33, 63, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Tahoma, "Noto Sans Thai", "Leelawadee UI", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(8, 172, 196, 0.42);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(81, 211, 218, 0.42);
+}
+
+.gradient-brand {
+  background: linear-gradient(115deg, var(--cyan) 0%, #1697cf 48%, var(--blue) 100%);
+}
+
+.gradient-button {
+  background: linear-gradient(100deg, var(--yellow), var(--orange));
+}
+
+.soft-card {
+  background: var(--card);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.page-section {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
